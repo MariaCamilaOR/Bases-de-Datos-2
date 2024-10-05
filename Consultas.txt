@@ -11,21 +11,21 @@ db.doctores.insertOne({
   "especialidad": "Pediatrics",
   "numero": "3051234567",
   "email": "Jack.doe@doctor.com",
-  "idDoctor": 2  // Un nuevo idDoctor
+  "idDoctor": 12  
 })
 
 --------------------------------------------- READ ---------------------------------------------
 
-Busca todos ------------------------------------------------------------------------------------
+Buscar por id ------------------------------------------------------------------------------------
 
 db.doctores.findOne({ "idDoctor": 1 })
-Nota: Cambiar n por numero del id del que se quiera buscar 
-Ejemplo: db.citasNormalizadas.findOne({ "idCitaNormalizada": 1 }) 
+
+
 
 Lista todos ------------------------------------------------------------------------------------
 
 db.doctores.find().pretty()
-Nota: se agrega pretty para que se vea mejor
+
 
 
 
@@ -58,21 +58,21 @@ db.citasNormalizadas.insertOne({
   "idDoctor": 9,                 
   "status": "Programada",         
   "fecha": "2024-10-06T14:00:00",
-  "razon": "Consulta de rutina",  
+  "razon": "Consulta de rutina",
+  "idCitaNormalizada":"12"
 
 })
 
 --------------------------------------------- READ ---------------------------------------------
 
-Busca todos ------------------------------------------------------------------------------------
+Buscar por id  ------------------------------------------------------------------------------------
 
-db.citasNormalizadas.findOne({ "idCitaNormalizada": n }) 
-Nota: Cambiar n por numero del id del que se quiera buscar 
-Ejemplo: db.citasNormalizadas.findOne({ "idCitaNormalizada": 1 }) 
+
+ db.citasNormalizadas.findOne({ "idCitaNormalizada": 1 }) 
 
 Lista todos ------------------------------------------------------------------------------------
 db.citasNormalizadas.find().pretty() 
-Nota: se agrega pretty para que se vea mejor
+
 
 
 
