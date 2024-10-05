@@ -1,3 +1,4 @@
+//--- Juan Jose Santacruz Ferraro y Maria Camila Orozco
 // -------------------------------------------------------------------------------- DOCTORES --------------------------------------------------------------------------------
 
 --------------------------------------------- CREATE ---------------------------------------------
@@ -19,7 +20,7 @@ db.doctores.find().pretty()
 
 --------------------------------------------- UPDATE ---------------------------------------------
 db.doctores.updateOne(
-  { "idDoctor": 1 },  // Filtro para encontrar el documento
+  { "idDoctor": 1 },  
   { 
     "$set": { 
       "nombre": "James",
@@ -80,7 +81,7 @@ db.pacientes.insertOne({
   "fecha_nacimiento": "1990-10-10",
   "numero": "3059876543",
   "email": "quintessential.smith@correo.com",
-  "idPaciente": 12  // Un nuevo idPaciente
+  "idPaciente": 12  
 })
 
 --------------------------------------------- READ ---------------------------------------------
@@ -92,7 +93,7 @@ db.pacientes.find().pretty()
 
 --------------------------------------------- UPDATE ---------------------------------------------
 db.pacientes.updateOne(
-  { "idPaciente": 6 },  // Filtro para encontrar el documento
+  { "idPaciente": 6 },  
   { 
     "$set": { 
       "nombre": "Lucía",
