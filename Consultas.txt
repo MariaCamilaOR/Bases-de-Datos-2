@@ -48,10 +48,10 @@ db.citasNormalizadas.insertOne({
 })
 
 --------------------------------------------- READ ---------------------------------------------
-// Buscar por id
+
 db.citasNormalizadas.findOne({ "idCitaNormalizada": 1 })
 
-// Lista todos
+
 db.citasNormalizadas.find().pretty()
 
 --------------------------------------------- UPDATE ---------------------------------------------
@@ -71,6 +71,65 @@ db.citasNormalizadas.updateOne(
 
 --------------------------------------------- DELETE ---------------------------------------------
 db.citasNormalizadas.deleteOne({ "idCitaNormalizada": 1 })
+// -------------------------------------------------------------------------------- CITAS DESNORMALIZADAS --------------------------------------------------------------------------------
+--------------------------------------------- CREATE ---------------------------------------------
+db.citasDesnormalizadas.insertOne({
+  "paciente": {
+    "idPaciente": 8,
+    "nombre": "Sofía",
+    "apellido": "Ramírez",
+    "fecha_nacimiento": "1997-04-18",
+    "numero": "3048901234",
+    "email": "sofia.ramirez@correo.com"
+  },
+  "doctor": {
+    "idDoctor": 9,
+    "nombre": "Sophia",
+    "apellido": "Martinez",
+    "especialidad": "Oncologia",
+    "numero": "3048901234",
+    "email": "sophia.martinez@doctor.com"
+  },
+  "status": "Programada",
+  "fecha": "2024-10-06T14:00:00",
+  "razon": "Consulta de rutina",
+  "idCitaDesnormalizada": "12"
+})
+--------------------------------------------- READ ---------------------------------------------
+db.citasDesnormalizadas.findOne({ "idCitaDesnormalizada": 1 })
+db.citasDesnormalizadas.find().pretty()
+
+--------------------------------------------- UPDATE ---------------------------------------------
+db.citasDesnormalizadas.updateOne(
+  { "idCitaDesnormalizada": 2 },
+  {
+    "$set": {
+      "paciente": {
+        "idPaciente": 3,
+        "nombre": "Carlos",
+        "apellido": "Rodríguez",
+        "fecha_nacimiento": "1978-11-30",
+        "numero": "3043456789",
+        "email": "carlos.rodriguez@correo.com"
+      },
+      "doctor": {
+        "idDoctor": 4,
+        "nombre": "James",
+        "apellido": "Williams",
+        "especialidad": "Dermatologia",
+        "numero": "3043456789",
+        "email": "james.williams@doctor.com"
+      },
+      "status": "Cancelada",
+      "fecha": "2024-10-02T12:00:00",
+      "razon": "Consulta de emergencia",
+      "idCitaDesnormalizada": 2
+    }
+  }
+)
+
+--------------------------------------------- DELETE ---------------------------------------------
+db.citasDesnormalizadas.deleteOne({ "idCitaDesnormalizada": 1 })
 
 // -------------------------------------------------------------------------------- PACIENTES --------------------------------------------------------------------------------
 
